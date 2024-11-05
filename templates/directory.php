@@ -407,36 +407,38 @@ $sqlQuery = $sql_parts['SELECT'] . $sql_parts['JOIN'] . $sql_parts['WHERE'] . $s
 			if($layout == "table")
 			{
 				?>
-				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+				<div class="<?php echo pmpro_get_element_class( 'pmpro_card' ); ?>">
+						<div class="<?php echo pmpro_get_element_class( 'pmpro_card_content' ); ?>">
+							<table class="<?php echo pmpro_get_element_class( 'pmpro_table' ); ?>">
 					<thead>
 					<?php if(!empty($elements_array['avatar']['visible'])) { ?>
-						<th class="pmpro_member_directory_avatar">
-							<?php echo esc_html( $elements_array['avatar']['label'] ); ?>
+						<th class="pmpro_member_directory_avatar" data-title="<?php esc_attr_e( $elements_array['avatar']['label'] ); ?>">
+							<?php esc_html_e( $elements_array['avatar']['label'] ); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($elements_array['display_name']['visible'])) { ?>
-						<th class="pmpro_member_directory_display-name">
-							<?php echo esc_html( $elements_array['display_name']['label'] ); ?>
+						<th class="pmpro_member_directory_display-name" data-title="<?php esc_attr_e( $elements_array['display_name']['label'] ); ?>">
+							<?php esc_html_e( $elements_array['display_name']['label'] ); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($elements_array['email']['visible'])) { ?>
-						<th class="pmpro_member_directory_email">
-							<?php echo esc_html( $elements_array['email']['label'] ); ?>
+						<th class="pmpro_member_directory_email" data-title="<?php esc_attr_e( $elements_array['email']['label'] ); ?>">
+							<?php esc_html_e( $elements_array['email']['label'] ); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($elements_array['fields']['visible'])) { ?>
-						<th class="pmpro_member_directory_additional">
-							<?php echo esc_html( $elements_array['fields']['label'] ); ?>
+						<th class="pmpro_member_directory_additional" data-title="<?php esc_attr_e( $elements_array['fields']['label'] ); ?>">
+							<?php esc_html_e( $elements_array['fields']['label'] ); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($elements_array['level']['visible'])) { ?>
-						<th class="pmpro_member_directory_level">
-							<?php echo esc_html( $elements_array['level']['label'] ); ?>
+						<th class="pmpro_member_directory_level" data-title="<?php esc_attr_e( $elements_array['level']['label'] ); ?>">
+							<?php esc_html_e( $elements_array['level']['label'] ); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($elements_array['startdate']['visible'])) { ?>
-						<th class="pmpro_member_directory_date">
-							<?php echo esc_html( $elements_array['startdate']['label'] ); ?>
+						<th class="pmpro_member_directory_date" data-title="<?php esc_attr_e( $elements_array['startdate']['label'] ); ?>">
+							<?php esc_html_e( $elements_array['startdate']['label'] ); ?>
 						</th>
 					<?php } ?>
 					<?php if(!empty($link) && !empty($profile_url) && !empty( $elements_array['link']['visible'] ) ) { ?>
@@ -610,6 +612,8 @@ $sqlQuery = $sql_parts['SELECT'] . $sql_parts['JOIN'] . $sql_parts['WHERE'] . $s
 					?>
 					</tbody>
 				</table>
+				</div> <!-- end pmpro_card_content -->
+				</div> <!-- end pmpro_card -->
 				<?php
 			}
 			else
